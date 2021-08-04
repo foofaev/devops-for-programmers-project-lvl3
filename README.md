@@ -8,7 +8,7 @@ https://weryha.xyz/
 * Install Ansible > 4
 * Install Make
 * Create (if necessary) account at [Terraform Cloud](https://app.terraform.io/)
-* Create (if necessary) account at Datadog
+* Create (if necessary) account at [Datadog](https://datadoghq.eu/)
 * Login into Terraform CLI under your Terraform Cloud account
 * Get secret `vault_password` file and place it to `./ansible/.vault_password`.
 * Call `make setup` to install prerequisites and initiate terraform
