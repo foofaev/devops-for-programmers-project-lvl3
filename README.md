@@ -14,15 +14,17 @@ https://weryha.xyz/
 * Call `make setup` to install prerequisites and initiate terraform
 
 * Ensure you have the following variables in your Terraform Cloud account or put them into the file with `*.auto.tfvars` extension:
-  * do_token <!-- DigitalOcean Personal Access Token -->
-  * pvt_key <!-- Private ssh key location, so Terraform can use it to log in to new Droplets -->
-  * region <!-- Services region to use -->
-  * datadog_api_url <!-- The datadog API URL -->
-  * datadog_api_key <!-- The datadog API key -->
-  * datadog_app_key <!-- The datadog APP key -->
-  * datadog_query <!-- The monitor query to notify on -->
-  * app_port <!-- Port your application runs at -->
-  * db_name <!-- Name of the database to use -->
+```HCL
+do_token /* DigitalOcean Personal Access Token */
+pvt_key /* Private ssh key location, so Terraform can use it to log in to new Droplets */
+region /* Services region to use */
+datadog_api_url /* The datadog API URL */
+datadog_api_key /* The datadog API key */
+datadog_app_key /* The datadog APP key */
+datadog_query /* The monitor query to notify on */
+app_port /* Port your application runs at */
+db_name /* Name of the database to use */
+```
 
 ### To create infrastructure using Terraform run:
 ```sh

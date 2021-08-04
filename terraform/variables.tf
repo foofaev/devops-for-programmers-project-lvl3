@@ -14,7 +14,7 @@ variable "region" {
 }
 
 variable "datadog_api_url" {
-  type    = string
+  type = string
 }
 
 variable "datadog_api_key" {
@@ -36,5 +36,5 @@ variable "app_port" {
 }
 
 variable "db_name" {
-  type    = string
+  type = string
 }
