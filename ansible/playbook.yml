@@ -1,0 +1,27 @@
+---
+- name: Setup Hosts and deploy docker app
+  hosts: all
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+  roles:
+    - geerlingguy.pip
+    - datadog.datadog
+
+  tasks:
+    - name: Create .env file with secrets
+      ansible.builtin.template:
+        src: ./templates/env.j2
+        dest: '{{ env_file_path }}'
+
+    - name: Create and start redmine
+      community.docker.docker_container:
+        container_default_behavior: no_defaults
+        name: app
+        image: redmine:4.2.1
+        state: started
+        restart: true
+        published_ports:
+          - '{{ port }}:3000'
+        env_file: '{{ env_file_path }}'
