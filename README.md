@@ -17,13 +17,13 @@ https://weryha.xyz/
 ```HCL
 do_token /* DigitalOcean Personal Access Token */
 pvt_key /* Private ssh key location, so Terraform can use it to log in to new Droplets */
-region /* Services region to use */
 datadog_api_url /* The datadog API URL */
 datadog_api_key /* The datadog API key */
 datadog_app_key /* The datadog APP key */
-datadog_query /* The monitor query to notify on */
-app_port /* Port your application runs at */
-db_name /* Name of the database to use */
+region /* Optional. Services region to use */
+datadog_query /* Optional. The monitor query to notify on */
+app_port /* Optional. Port your application runs at */
+db_name /* Optional. Name of the database to use */
 ```
 
 ### To create infrastructure using Terraform run:
