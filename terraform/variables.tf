@@ -11,10 +11,12 @@ variable "pvt_key" {
 variable "region" {
   description = "Services region"
   type        = string
+  default     = "fra1"
 }
 
 variable "datadog_api_url" {
-  type = string
+  type    = string
+  default = "https://api.datadoghq.eu/"
 }
 
 variable "datadog_api_key" {
@@ -29,12 +31,15 @@ variable "datadog_app_key" {
 variable "datadog_query" {
   description = "The monitor query to notify on"
   type        = string
+  default     = "\"http.can_connect\".over(\"instance:application_health_check_status\",\"url:http://localhost:3000\").by(\"host\",\"instance\",\"url\").last(2).count_by_status()"
 }
 
 variable "app_port" {
-  type = number
+  type    = number
+  default = 3000
 }
 
 variable "db_name" {
-  type = string
+  type    = string
+  default = "hexlet_lvl_3"
 }

@@ -23,5 +23,5 @@
         state: started
         restart: true
         published_ports:
-          - '{{ port }}:3000'
+          - '{{ app_port }}:3000'
         env_file: '{{ env_file_path }}'

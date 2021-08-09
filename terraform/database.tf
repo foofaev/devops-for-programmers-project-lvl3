@@ -1,11 +1,10 @@
 resource "digitalocean_database_cluster" "db-cluster" {
-  name                 = "lvl-3-db-cluster"
-  engine               = "pg"
-  version              = "13"
-  size                 = "db-s-1vcpu-1gb"
-  region               = var.region
-  node_count           = 1
-  private_network_uuid = digitalocean_vpc.vpc.id
+  name       = "lvl-3-db-cluster"
+  engine     = "pg"
+  version    = "13"
+  size       = "db-s-1vcpu-1gb"
+  region     = var.region
+  node_count = 1
 }
 
 resource "digitalocean_database_firewall" "db-firewall" {

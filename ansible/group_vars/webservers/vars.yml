@@ -12,5 +12,5 @@ datadog_checks:
     init_config:
     instances:
       - name: Application health check status
-        url: 'http://localhost:{{ port }}'
+        url: 'http://localhost:{{ app_port }}'
         timeout: 5

@@ -1,6 +1,7 @@
 resource "digitalocean_loadbalancer" "loadbalancer" {
-  name                   = "foofaev-project-3-loadbalancer"
-  region                 = var.region
+  name   = "foofaev-project-3-loadbalancer"
+  region = var.region
+
   redirect_http_to_https = true
 
   forwarding_rule {
@@ -22,10 +23,9 @@ resource "digitalocean_loadbalancer" "loadbalancer" {
   }
 
   healthcheck {
-    port     = 22
+    port     = var.app_port
     protocol = "tcp"
   }
 
   droplet_ids = digitalocean_droplet.servers.*.id
-  vpc_uuid    = digitalocean_vpc.vpc.id
 }

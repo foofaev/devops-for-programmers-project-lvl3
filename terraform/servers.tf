@@ -5,5 +5,4 @@ resource "digitalocean_droplet" "servers" {
   region   = var.region
   size     = "s-1vcpu-1gb"
   ssh_keys = [data.digitalocean_ssh_key.foo-wsl2.id]
-  vpc_uuid = digitalocean_vpc.vpc.id
 }
